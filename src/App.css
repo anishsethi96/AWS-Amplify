@@ -17,17 +17,9 @@
 }
 
 .two {
-  margin-top: 30px;
-  margin-left: 300px;
-  padding-left: 300px;
-}
-
-.three {
-  margin: 10px;
-  padding-left: 50px;
   float: right;
+  padding-right: 350px
 }
-
 
 .edit-form {
   max-width: 300px;

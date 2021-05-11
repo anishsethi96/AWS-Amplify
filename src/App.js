@@ -2,37 +2,64 @@ import React, { Component } from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
+import logo from "./Circadian-ZircLight Logo.png"
 
 import AddSPD from "./components/spdData.component";
+import Home from "./components/home";
+
 
 
 class App extends Component {
-
-  state = { message: "" }
-  callbackFunction = (childData) => {
-        this.setState({message: "User ID - " + childData})
-  }
-
   render() {
     return (
       <Router>
         <div>
-          <nav className="navbar navbar-expand navbar-dark bg-dark">
-            <a href="/login" className="navbar-brand">
-              CIRCADIAN&reg; Lighting Calculator
-            </a>
-            <div className="navbar-nav mr-auto">
-              <li className="nav-item">
+        <nav class="navbar navbar-expand">
+          <a href="/home" className="navbar-brand">
+            <img src= {logo} alt="Sample SPD Input" height = "70px"/>
+          </a>
+          <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav mr-auto">
+            <li className="nav-item active">
+              <Link to={"/app1"} className="nav-link">
+                Light Source Measurement
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link to={"/app1"} className="nav-link">
+                Eye Level Illumination
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link to={"/app1"} className="nav-link">
+                Table Top Illumination
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link to={"/app1"} className="nav-link">
+                Save a Room
+              </Link>
+            </li>
+            </ul>
+            <ul class="navbar-nav">
+              <li className="nav-item" >
                 <Link to={"/app1"} className="nav-link">
-                  Light Source Measurement
+                  Sign In
                 </Link>
               </li>
-            </div>
-          </nav>
+              <li className="nav-item">
+                <Link to={"/app1"} className="nav-link">
+                  Create an Account
+                </Link>
+              </li>
+            </ul>
+          </div>
+        </nav>
 
           <div className="container mt-3">
             <Switch>
               <Route exact path="/app1" component={AddSPD} />
+              <Route exact path="/home" component={Home} />
             </Switch>
           </div>
         </div>

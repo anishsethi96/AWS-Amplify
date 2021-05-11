@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 import { CSVReader } from 'react-papaparse';
-import { LineChart, Line, XAxis, YAxis, Legend, Tooltip, CartesianGrid } from 'recharts';
-import "../App.css";
+import { LineChart, Line, XAxis, Tooltip, CartesianGrid } from 'recharts';
+import "../component.css";
+import sample from "../sampleinput.PNG"
+import img from "../spectrometer.PNG"
 
 var irradiance = 0;
 var total_irradiance = 0;
@@ -103,55 +105,38 @@ export default class AddSPD extends Component {
 
     return (
       <div className="container">
-      <h3> Light Source Measurement </h3>
+        <h3> Light Source Measurement </h3>
+
         <div className="one">
-            <div>
-              <div className="form-group">
-                <label htmlFor="title">Username (Placeholder label - can leave empty)</label>
-                <input type="text" className="form-control" id="uid" required value={this.state.uid} onChange={this.onChangeUID} name="uid"/>
-              </div>
+          <div className="form-group">
+            <img src= {img} alt="Sample SPD Input" height = "250px"/> <br/>
+            <label htmlFor="title">Import SPDValues</label>
+            <CSVReader onDrop={this.handleOnDrop} onError={this.handleOnError} addRemoveButton >
+              <span>Drop CSV file here or click to upload.</span>
+            </CSVReader>
+          </div>
+          <div className="col-md-12 text-center">
+            <form>
+              <button onClick={this.saveUserInfo} className="btn btn-success button">
+                Calculate
+              </button>
+            </form>
+          </div>
 
-              <div className="form-group">
-                <label htmlFor="description">SPD Name (Placeholder label - can leave empty)</label>
-                <input type="text" className="form-control" id="spd_name" required value={this.state.spd_name} onChange={this.onChangeSPDName} name="spd_name" />
-              </div>
-
-              <div className="form-group">
-                <label htmlFor="title">Import SPDValues</label>
-                <CSVReader
-                  onDrop={this.handleOnDrop}
-                  onError={this.handleOnError}
-                  addRemoveButton
-                >
-                  <span>Drop CSV file here or click to upload.</span>
-                </CSVReader>
-              </div>
-            </div>
-
-            <div className="second">
-              <div className="col-md-12 text-center">
-                <form>
-                  <button onClick={this.saveUserInfo} className="btn btn-success button">
-                    Calculate
-                  </button>
-                </form>
-              </div>
-            </div>
-        </div>
-
-        <div className="two">
-        CPPR:  {this.state.CPPR} <br/>
-        % Circadian Blue: {this.state.circadian_blue} <br/><br/>
-
-        <LineChart width={550} height={350} data={data2}
+          CPPR:  {this.state.CPPR} <br/>
+          % Circadian Blue: {this.state.circadian_blue} <br/><br/>
+          <LineChart width={500} height={350} data={data2}
             margin={{ top: 5, right: 30, left: -5, bottom: 5 }}>
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis dataKey="Wavelength" />
-            <YAxis />
             <Tooltip />
-            <Legend />
             <Line type="monotone" dataKey="SPDValues" stroke="#0095FF" />
-        </LineChart>
+          </LineChart>
+        </div>
+
+        <div className="two">
+          Input SPD file format <br/>
+          <img src= {sample} alt="Sample SPD Input" height = "400px"/>
         </div>
       </div>
     );
