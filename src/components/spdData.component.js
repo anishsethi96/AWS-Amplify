@@ -4,6 +4,7 @@ import { LineChart, Line, XAxis, Tooltip, CartesianGrid } from 'recharts';
 import "../component.css";
 import sample from "../sampleinput.PNG"
 import img from "../spectrometer.PNG"
+import logo from "./Circadian-ZircLight Logo.png"
 
 var irradiance = 0;
 var total_irradiance = 0;
@@ -110,6 +111,8 @@ export default class AddSPD extends Component {
         <div className="one">
           <div className="form-group">
             <img src= {img} alt="Sample SPD Input" height = "250px"/> <br/>
+
+            <img src= {logo} alt="Logo" height = "70px"/>
             <label htmlFor="title">Import SPDValues</label>
             <CSVReader onDrop={this.handleOnDrop} onError={this.handleOnError} addRemoveButton >
               <span>Drop CSV file here or click to upload.</span>
