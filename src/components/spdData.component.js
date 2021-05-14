@@ -110,6 +110,7 @@ export default class AddSPD extends Component {
         <div className="one">
           <div className="form-group">
             <img src= {img} alt="Sample SPD Input" height = "250px"/> <br/>
+            <img src= {img} alt="Sample SPD Input" height = "70px"/>
             <label htmlFor="title">Import SPDValues</label>
             <CSVReader onDrop={this.handleOnDrop} onError={this.handleOnError} addRemoveButton >
               <span>Drop CSV file here or click to upload.</span>

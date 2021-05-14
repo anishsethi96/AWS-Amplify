@@ -16,7 +16,7 @@ class App extends Component {
         <div>
         <nav class="navbar navbar-expand">
           <a href="/home" className="navbar-brand">
-            <img src= {logo} alt="Sample SPD Input" height = "70px"/>
+            <img src= {logo} alt="Logo" height = "70px"/>
           </a>
           <div class="collapse navbar-collapse" id="navbarText">
             <ul class="navbar-nav mr-auto">
