@@ -4,7 +4,7 @@ import { LineChart, Line, XAxis, Tooltip, CartesianGrid } from 'recharts';
 import "../component.css";
 import sample from "../sampleinput.PNG"
 import img from "../spectrometer.PNG"
-import logo from "./Circadian-ZircLight Logo.png"
+import logo from "../Circadian-ZircLight Logo.png"
 
 var irradiance = 0;
 var total_irradiance = 0;
