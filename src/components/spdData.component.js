@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import { CSVReader } from 'react-papaparse';
 import { LineChart, Line, XAxis, Tooltip, CartesianGrid } from 'recharts';
 import "../component.css";
-import sample from "../sampleinput.PNG"
-import img from "../spectrometer.PNG"
+import sample from "../SampleInput.png"
+import img from "../spectrometer.png"
 import logo from "../Circadian-ZircLight Logo.png"
 
 var irradiance = 0;
