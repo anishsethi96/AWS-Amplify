@@ -3,8 +3,8 @@ import { CSVReader } from 'react-papaparse';
 import { LineChart, Line, XAxis, Tooltip, CartesianGrid } from 'recharts';
 import "../component.css";
 
-import sample from "../SampleInput.PNG"
-import img from "../spectrometer.png"
+import sample from "./SampleInput.png";
+import img from "./spectrometer.png";
 
 var irradiance = 0;
 var total_irradiance = 0;
